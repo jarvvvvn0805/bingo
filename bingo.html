@@ -52,7 +52,12 @@
     });
 
     async function fetchData() {
-        const proxy = 'https://api.allorigins.win/raw?url=';  // 解決 CORS
+        const proxyUrls = [
+    'https://api.allorigins.win/raw?url=',
+    'https://corsproxy.io/?',
+    ''  // 直接 fetch 若網站允許
+];
+
         const urls = [
             encodeURIComponent('https://lotto.auzonet.com/bingobingoV1.php'),  // 穩定版
             encodeURIComponent('https://lotto.auzo.tw/bingobingo.php')
@@ -205,3 +210,4 @@
     </script>
 </body>
 </html>
+
